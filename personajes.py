@@ -1,16 +1,35 @@
 class Personaje:
-    def __init__(self, nombre, clase, vida=100, ataque=300, mana=200):
+    def __init__(
+        self,
+        nombre,
+        clase,
+        vida=100,
+        ataque=300,
+        mana=200,
+    ):
         self.nombre = nombre
         self.clase = clase
         self.vida = vida
         self.ataque = ataque
         self.mana = mana
 
+    def equipar_arma(self, arma):
+        self.ataque += self.ataque / arma.bonus_ataque
+
+
+class Armas:
+    def __init__(self, nombre, bonus_ataque):
+        self.nombre = nombre
+        self.bonus_ataque = bonus_ataque
+
 
 # El nombre es un atributo que hay que insertar algun valor
-class Heroe(Personaje):
+class Heroe(Personaje, Armas):
     def __init__(self, nombre):
-        super().__init__(nombre, clase="Heroe")
+        super().__init__(
+            nombre,
+            clase="Heroe",
+        )
         self.vida *= 4
         self.ataque += 300
 

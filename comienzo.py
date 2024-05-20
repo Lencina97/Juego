@@ -1,8 +1,7 @@
 from personajes import *
+from armas import armas_para_heroe
 
 nombre = input("Escribe tu nombre: ").capitalize()
-# clase = " "
-# datos = [nombre, clase]
 
 
 def luchar(jugador):
@@ -44,14 +43,14 @@ def caminar(jugador):
 def acciones(jugador):
     while True:
         deseo = input(
-            f"""¿{jugador.nombre} el {jugador.clase} qué deseas hacer? \n
-                      1)Luchar \n
-                      2)Correr\n
-                      3)Caminar \n
-                      4)Mostrar estadisticas\n
-                      """
+            f"""¿{jugador.nombre} el {jugador.clase} qué deseas hacer? \n 1)Luchar \n 2)Correr\n 3)Caminar \n 4)Mostrar estadisticas\n 5)Mostrar Armas"""
         )
         if deseo == "1":
+            print("Antes de Luchar, elige tu arma")
+            if jugador.clase == "Heroe" :
+                imprimir_armas(armas_para_heroe)
+                
+            
             luchar(jugador)
         elif deseo == "2":
             print("Corriendo")
@@ -60,6 +59,8 @@ def acciones(jugador):
             caminar(jugador)
         elif deseo == "4":
             mostrar_estadisticas(jugador)
+        elif deseo == "5":
+            imprimir_armas(armas_para_heroe)
         else:
             print("Intenta con otra opcion")
 
@@ -67,11 +68,7 @@ def acciones(jugador):
 def seleccion_clase(nombre):
     while True:
         clase = input(
-            f"""Selecciona tu personaje {nombre}: \n
-                  1)Héroe\n
-                  2)Mago\n
-                  3)Tanque\n
-                  4) Asesino\n"""
+            f"""Selecciona tu personaje {nombre}: \n 1)Héroe\n 2)Mago\n 3)Tanque\n 4)Asesino\n"""
         )
 
         if clase == "1":
@@ -97,18 +94,21 @@ def seleccion_clase(nombre):
     acciones(jugador)
 
 
-def clases(clase, nombre):
-    jugador = clase()
-    nombre = jugador.nombre
-    return
+def imprimir_armas(lista):
+    contador = 1
+    for arma in lista:
+        print(f"{contador}) Nombre: {arma.nombre}, Ataque: {arma.bonus_ataque}")
+        contador += 1
 
 
 def mostrar_estadisticas(jugador):
-    print(f"Nombre = {jugador.nombre}")
-    print(f"Clase = {jugador.clase}")
-    print(f"Vida = {jugador.vida}")
-    print(f"Ataque = {jugador.ataque}")
-    print(f"Maná = {jugador.mana}")
+    print(
+        f"""Nombre = {jugador.nombre} \n 
+          Clase = {jugador.clase} \n 
+          Vida = {jugador.vida} \n 
+          Ataque = {jugador.ataque} \n 
+          Maná = {jugador.mana}"""
+    )
 
 
 seleccion_clase(nombre)
