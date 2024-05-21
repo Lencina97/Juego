@@ -49,9 +49,13 @@ def acciones(jugador):
             print("Antes de Luchar, elige tu arma")
             if jugador.clase == "Heroe" :
                 imprimir_armas(armas_para_heroe)
-                
+                deseo = input(" ")
+                indice = int(deseo)
+                arma = armas_para_heroe[indice]
+                equipar_arma(jugador,arma)
+                mostrar_estadisticas(jugador)
             
-            luchar(jugador)
+            #luchar(jugador)
         elif deseo == "2":
             print("Corriendo")
             break
@@ -95,7 +99,7 @@ def seleccion_clase(nombre):
 
 
 def imprimir_armas(lista):
-    contador = 1
+    contador = 0
     for arma in lista:
         print(f"{contador}) Nombre: {arma.nombre}, Ataque: {arma.bonus_ataque}")
         contador += 1
@@ -110,5 +114,9 @@ def mostrar_estadisticas(jugador):
           Maná = {jugador.mana}"""
     )
 
+
+def equipar_arma(jugador,arma):
+    jugador.ataque += jugador.ataque / arma.bonus_ataque
+    return jugador
 
 seleccion_clase(nombre)

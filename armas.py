@@ -17,10 +17,10 @@ armas_heroe(espada_corta)
 armas_heroe(espada_larga)
 
 
-def imprimir_armas(lista):
+"""def imprimir_armas(lista):
     for arma in lista:
         print(f"Nombre:{arma.nombre}, Ataque: +{arma.bonus_ataque}")
-
+"""
 
 # imprimir_armas(armas_para_heroe)
 
@@ -30,3 +30,6 @@ espada_elfica = Armas("Lagrima de Estrellas", 16)
 armas_heroe(espada_ancha)
 armas_heroe(espada_elfica)
 ##imprimir_armas(armas_para_heroe)
+
+
+
