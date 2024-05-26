@@ -13,9 +13,6 @@ class Personaje:
         self.ataque = ataque
         self.mana = mana
 
-    def equipar_arma(self, arma):
-        self.ataque += self.ataque / arma.bonus_ataque
-
 
 class Armas:
     def __init__(self, nombre, bonus_ataque):
