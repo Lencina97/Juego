@@ -1,7 +1,5 @@
-import os
-
 from crear_personaje import seleccion_clase
-
+import os
 
 menu = ["1)Comenzar aventura", "2)Configuración", "3)Salir"]
 
@@ -18,17 +16,8 @@ def configuracion():
 items = {1: aventura, 2: configuracion, 3: exit}
 
 
-def seleccion_opcion():
-
-    while True:
-        imprimir_menu(menu)
-        opcion = int(input("Elige una opción: "))
-        if opcion in items:
-            items[opcion]()
-            break
-        else:
-            print("Elegi bien gato")
-            break
+def limpiar_consola():
+    os.system("cls")
 
 
 def imprimir_menu(lista):
@@ -36,5 +25,15 @@ def imprimir_menu(lista):
         print(item)
 
 
-if os.name == "nt":
-    os.system("cls")
+def seleccion_opcion():
+    while True:
+        imprimir_menu(menu)
+        opcion = int(input("Elige una opción: "))
+        if opcion in items:
+            limpiar_consola()
+            items[opcion]()
+
+            break
+        else:
+            print("Elegi bien gato")
+            break

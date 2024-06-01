@@ -1,10 +1,16 @@
+import os
 from menu import *
-from acciones import acciones
-from crear_personaje import jugador
+
+jugador = ""
 
 
+def limpiar_consola():
+    os.system("cls")
+
+
+limpiar_consola()
 seleccion_opcion()
-acciones(jugador)
+
 
 # print(
 #    f"""Bienvenido {jugador.nombre}, seras un gran {jugador.clase}\n

@@ -1,7 +1,16 @@
-from crear_personaje import mostrar_estadisticas
 from luchar import luchar
 from caminar import caminar
 from armas import armas_para_heroe, imprimir_armas
+
+
+def mostrar_estadisticas(jugador):
+    return print(
+        f"""
+            Clase = {jugador.clase} \n
+            Vida = {jugador.vida} \n
+            Ataque = {jugador.ataque} \n
+            Maná = {jugador.mana}"""
+    )
 
 
 def acciones(jugador):
@@ -30,4 +39,3 @@ def acciones(jugador):
             imprimir_armas(armas_para_heroe)
         else:
             print("Intenta con otra opcion")
-    # return jugador
