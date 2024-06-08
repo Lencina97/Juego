@@ -63,25 +63,3 @@ class Enemigo(Personaje):
 
 
 clases = [Heroe, Mago, Tanque, Asesino]
-
-# jugador = Mago("Brian")
-# print(jugador.nombre)
-
-# def mostrar_datos(clase):
-#    personaje_uno = clase()
-#    print(f"Nombre = {personaje_uno.nombre}")
-#    print(f"Vida = {personaje_uno.vida}")
-#    print(f"Ataque = {personaje_uno.ataque}")
-#    print(f"Maná = {personaje_uno.mana}")
-#
-#
-# mostrar_datos(Heroe)
-#
-#
-# mostrar_datos(Mago)
-#
-#
-# mostrar_datos(Tanque)
-#
-#
-# mostrar_datos(Asesino)

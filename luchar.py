@@ -1,4 +1,5 @@
 from personajes import *
+from armas import imprimir_armas
 
 
 def luchar(jugador):
@@ -17,4 +18,12 @@ def luchar(jugador):
     # return jugador
 
 
+# if jugador.clase == "Heroe":
+#                imprimir_armas(armas_para_heroe)
+#                deseo = input(" ")
+#                indice = int(deseo)
+#                arma = armas_para_heroe[indice]
+#                jugador.equipar_arma(arma)
+#                mostrar_estadisticas(jugador)
+#
 # luchar(jugador)
